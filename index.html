@@ -6,8 +6,8 @@
   <title>Ardian Ars.</title>
   <meta name="description" content="Multimedia Designer — Yogyakarta, Indonesia">
   <meta name="theme-color" content="#ffffff">
-  <!-- Favicon dari foto GitHub -->
-  <link rel="icon" href="https://github.com/goldemarine.png?size=64">
+  <!-- Favicon dari foto GitHub (ganti USERNAME) -->
+  <link rel="icon" href="https://github.com/USERNAME.png?size=64">
 
   <style>
     :root {
@@ -130,8 +130,9 @@
       box-shadow: 0 8px 20px rgba(0, 113, 227, .15);
     }
 
-    .btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
-    .btn.primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+    /* Tombol berwarna: warna diambil dari variabel --c yang diisi per tombol */
+    .btn.solid { background: var(--c); border-color: var(--c); color: #fff; }
+    .btn.solid:hover { filter: brightness(.9); border-color: var(--c); }
 
     footer { margin-top: 28px; font-size: .8rem; color: var(--muted); }
 
@@ -167,15 +168,35 @@
       <a href="https://www.behance.net/USERNAME_BEHANCE" target="_blank" rel="noopener" aria-label="Behance">Bē</a>
     </nav>
 
-    <!-- TOMBOL: salin satu baris <a class="btn"> untuk menambah tombol baru -->
-    <section class="links" aria-label="Tautan">
-      <a class="btn primary" href="https://www.behance.net/USERNAME_BEHANCE" target="_blank" rel="noopener">Lihat Portofolio</a>
-      <a class="btn" href="https://github.com/USERNAME" target="_blank" rel="noopener">GitHub</a>
-      <a class="btn" href="https://wa.me/628123456789" target="_blank" rel="noopener">Hubungi via WhatsApp</a>
-      <a class="btn" href="https://contoh.com" target="_blank" rel="noopener">Teks Tombol</a>
-    </section>
+    <section class="links" id="links" aria-label="Tautan"></section>
 
     <footer>© 2026 Ardian Ars.</footer>
   </main>
+
+  <script>
+    /* ============================================================
+       DAFTAR TOMBOL — tambah tombol baru dengan menyalin satu baris
+       text  : tulisan di tombol
+       url   : tujuan tautan
+       color : warna tombol (kode hex). Kosongkan "" untuk tombol putih
+       ============================================================ */
+    const LINKS = [
+      { text: "Lihat Portofolio",      url: "https://www.behance.net/USERNAME_BEHANCE", color: "#0071e3" },
+      { text: "GitHub",                url: "https://github.com/USERNAME",              color: "#1d1d1f" },
+      { text: "Hubungi via WhatsApp",  url: "https://wa.me/628123456789",               color: "#25d366" },
+      { text: "Download CV",           url: "#",                                        color: "" },
+    ];
+
+    const box = document.getElementById("links");
+    LINKS.forEach(({ text, url, color }) => {
+      const a = document.createElement("a");
+      a.className = "btn" + (color ? " solid" : "");
+      a.href = url;
+      a.textContent = text;
+      if (color) a.style.setProperty("--c", color);
+      if (/^https?:/.test(url)) { a.target = "_blank"; a.rel = "noopener"; }
+      box.appendChild(a);
+    });
+  </script>
 </body>
 </html>
