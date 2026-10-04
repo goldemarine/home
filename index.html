@@ -6,7 +6,7 @@
   <title>Ardian Ars.</title>
   <meta name="description" content="Multimedia Designer — Yogyakarta, Indonesia">
   <meta name="theme-color" content="#ffffff">
-  <!-- Favicon dari foto GitHub (ganti USERNAME) -->
+  <!-- Favicon -->
   <link rel="icon" href="https://github.com/USERNAME.png?size=64">
 
   <style>
@@ -36,7 +36,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Floating box */
+    /* Kothak ngambang */
     .card {
       width: 100%;
       max-width: 420px;
@@ -74,7 +74,7 @@
       color: var(--muted);
     }
 
-    /* 3 ikon di bawah foto profil */
+    /* Lambang-lambang */
     .icons {
       display: flex;
       justify-content: center;
@@ -108,7 +108,7 @@
       stroke-linejoin: round;
     }
 
-    /* Tombol tautan */
+    /* Tombol */
     .links { display: flex; flex-direction: column; gap: 12px; }
 
     .btn {
@@ -130,7 +130,7 @@
       box-shadow: 0 8px 20px rgba(0, 113, 227, .15);
     }
 
-    /* Tombol berwarna: warna diambil dari variabel --c yang diisi per tombol */
+    /* Tombol mawi warni ingkang kapundhut saking variabel --c, ingkang dipunisi piyambak-piyambak miturut saben tombol */
     .btn.solid { background: var(--c); border-color: var(--c); color: #fff; }
     .btn.solid:hover { filter: brightness(.9); border-color: var(--c); }
 
@@ -151,13 +151,13 @@
 <body>
   <main class="card">
 
-    <!-- Foto otomatis dari GitHub: ganti USERNAME dengan username GitHub kamu -->
-    <img class="avatar" src="https://github.com/USERNAME.png?size=256" alt="Foto profil Ardian Ars.">
+    <!-- Potret Dhiri -->
+    <img class="avatar" src="https://github.com/goldemarine.png?size=256" alt="Foto profil Ardian Ars.">
 
     <h1>Ardian Ars.</h1>
     <p class="bio">Multimedia Designer di Yogyakarta. Terbuka untuk freelance &amp; fulltime.</p>
 
-    <!-- 3 ICON: ganti href dengan tautan kamu -->
+    <!-- Tiga Lambang: Pranala -->
     <nav class="icons" aria-label="Kontak dan media sosial">
       <a href="mailto:emailkamu@gmail.com" aria-label="Email">
         <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
@@ -175,10 +175,7 @@
 
   <script>
     /* ============================================================
-       DAFTAR TOMBOL — tambah tombol baru dengan menyalin satu baris
-       text  : tulisan di tombol
-       url   : tujuan tautan
-       color : warna tombol (kode hex). Kosongkan "" untuk tombol putih
+       TAMBAH TOMBOL — nambahi tombol enggal kanthi nyalin sawiji baris
        ============================================================ */
     const LINKS = [
       { text: "Lihat Portofolio",      url: "https://www.behance.net/USERNAME_BEHANCE", color: "#0071e3" },
